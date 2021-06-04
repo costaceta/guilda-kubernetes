@@ -1,0 +1,14 @@
+# https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/
+
+apiVersion: v1 # Which version of the Kubernetes API you're using to create this object
+kind: Pod # What kind of object you want to create
+metadata: #  Data that helps uniquely identify the object, including a name
+  name: meu-blog
+  labels:
+    app: wordpress
+spec: # What state you desire for the object
+  containers:
+  - name: meu-blog-wp-1
+    image: wordpress:php7.2-fpm
+    ports:
+      - containerPort: 9000
